@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@theme {
+  --color-pfe-dark: #0B3C5D;
+  --color-pfe-light: #2DAAE1;
+  --font-sans: "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  @apply text-slate-800 bg-white font-sans antialiased overflow-x-hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-display tracking-tight text-pfe-dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
