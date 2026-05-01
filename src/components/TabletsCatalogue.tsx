@@ -3,15 +3,15 @@ import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const tabletImages = [
-  { src: '/src/assets/images/MAKE_IT_BRIGHT_202604151133.jpeg', brand: 'Methimor' },
-  { src: '/src/assets/images/Product_catalog_image_202604151121.jpeg', brand: 'Ibumor' },
-  { src: '/src/assets/images/Product_catalog_image_202604151132.jpeg', brand: 'Morid' },
-  { src: '/src/assets/images/Product_catalog_image_202604151133.jpeg', brand: 'Levo-M' },
-  { src: '/src/assets/images/Use_the_provided_202604151121 (10).jpeg', brand: 'Gasidon' },
-  { src: '/src/assets/images/Use_the_provided_202604151121 (2).jpeg', brand: 'Safkam' },
-  { src: '/src/assets/images/Use_the_provided_202604151121 (3).jpeg', brand: 'RINGACIP' },
-  { src: '/src/assets/images/Use_the_provided_202604151121 (4).jpeg', brand: 'TRIOMOR' },
-  { src: '/src/assets/images/Use_the_provided_202604151121 (5).jpeg', brand: 'Montemore' },
+  { src: '/images/MAKE_IT_BRIGHT_202604151133.jpeg', brand: 'Methimor' },
+  { src: '/images/Product_catalog_image_202604151121.jpeg', brand: 'Ibumor' },
+  { src: '/images/Product_catalog_image_202604151132.jpeg', brand: 'Morid' },
+  { src: '/images/Product_catalog_image_202604151133.jpeg', brand: 'Levo-M' },
+  { src: '/images/Use_the_provided_202604151121 (10).jpeg', brand: 'Gasidon' },
+  { src: '/images/Use_the_provided_202604151121 (2).jpeg', brand: 'Safkam' },
+  { src: '/images/Use_the_provided_202604151121 (3).jpeg', brand: 'RINGACIP' },
+  { src: '/images/Use_the_provided_202604151121 (4).jpeg', brand: 'TRIOMOR' },
+  { src: '/images/Use_the_provided_202604151121 (5).jpeg', brand: 'Montemore' },
 ];
 
 export default function TabletsCatalogue() {

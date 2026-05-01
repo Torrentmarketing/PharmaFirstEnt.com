@@ -8,11 +8,11 @@ export default function Catalog() {
   }, []);
 
   return (
-    <div className="pt-24 pb-20 bg-gray-50 min-h-screen">
+    <div className="pt-24 pb-20 bg-blue-50/50 min-h-screen">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16 pt-10">
-           <h1 className="text-4xl md:text-5xl font-bold text-pfe-dark mb-4">Product Catalog</h1>
-           <p className="text-gray-600 max-w-2xl mx-auto text-lg">Browse our comprehensive range of high-quality pharmaceutical products across various medical categories, ensuring healthcare accessibility for all.</p>
+           <h1 className="text-4xl md:text-5xl font-bold text-blue-900 mb-4">Product Catalog</h1>
+           <p className="text-blue-800/70 max-w-2xl mx-auto text-lg">Browse our comprehensive range of high-quality pharmaceutical products across various medical categories, ensuring healthcare accessibility for all.</p>
         </div>
 
         <div className="flex flex-col gap-16">
@@ -22,7 +22,7 @@ export default function Catalog() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              className="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-gray-100"
+              className="bg-white rounded-2xl p-8 md:p-10 shadow-lg shadow-blue-100/50 border border-blue-100"
             >
               <div className="flex items-center gap-4 mb-8 pb-6 border-b border-gray-100">
                  <div className="w-16 h-16 rounded-xl overflow-hidden shrink-0">
@@ -41,7 +41,25 @@ export default function Catalog() {
                   const placeholderImg = `https://api.dicebear.com/9.x/shapes/svg?seed=${seed}&backgroundColor=f0f9ff`;
                   
                   const productImagesConfig: Record<string, string> = {
-                    'Methimor': '/methimor.png', // Uses the user uploaded image
+                    'Methimor': '/images/MAKE_IT_BRIGHT_202604151133.jpeg',
+                    'Ibumor': '/images/Product_catalog_image_202604151121.jpeg',
+                    'Morid': '/images/Product_catalog_image_202604151132.jpeg',
+                    'Levo-M': '/images/Product_catalog_image_202604151133.jpeg',
+                    'Gasidon': '/images/Use_the_provided_202604151121 (10).jpeg',
+                    'Safkam': '/images/Use_the_provided_202604151121 (2).jpeg',
+                    'RINGACIP': '/images/Use_the_provided_202604151121 (3).jpeg',
+                    'TRIOMOR': '/images/Use_the_provided_202604151121 (4).jpeg',
+                    'Montemore': '/images/Use_the_provided_202604151121 (5).jpeg',
+                    'CombiCap': '/images/Use_the_provided_202604151121 (6).jpeg',
+                    'HIDIN': '/images/Use_the_provided_202604151121 (7).jpeg',
+                    'Gabimor': '/images/Use_the_provided_202604151121 (8).jpeg',
+                    'MYRIVA': '/images/Use_the_provided_202604151121 (9).jpeg',
+                    'Gem-Ton': '/images/Use_the_provided_202604151122 (1).jpeg',
+                    'Amphozole': '/images/Use_the_provided_202604151122 (2).jpeg',
+                    'SAFPEP': '/images/Use_the_provided_202604151122.jpeg',
+                    'Feximor': '/images/Use_the_provided_202604151132 (1).jpeg',
+                    'XIMEMOR': '/images/Use_the_provided_202604151132 (2).jpeg',
+                    'Azydec': '/images/Use_the_provided_202604151132 (3).jpeg',
                   };
 
                   const productImage = productImagesConfig[product] || placeholderImg;
