@@ -99,6 +99,32 @@ export function FAQ() {
 }
 
 export function Contact() {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    message: ''
+  });
+  const [isSent, setIsSent] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    const whatsappNumber = "923338111992";
+    const text = `New Contact Request:%0A%0A*Name:* ${formData.firstName} ${formData.lastName}%0A*Email:* ${formData.email}%0A*Message:* ${formData.message}`;
+    
+    window.open(`https://wa.me/${whatsappNumber}?text=${text}`, "_blank");
+    
+    setIsSent(true);
+    setFormData({ firstName: '', lastName: '', email: '', message: '' });
+    
+    setTimeout(() => setIsSent(false), 5000);
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
   return (
     <section id="contact" className="py-24 bg-white px-6">
       <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8">
@@ -140,28 +166,42 @@ export function Contact() {
           </div>
         </div>
         
-        <div className="bg-gray-50 p-8 md:p-12 rounded-2xl border border-gray-200 shadow-sm">
+        <div className="bg-gray-50 p-8 md:p-12 rounded-2xl border border-gray-200 shadow-sm relative overflow-hidden">
+          {isSent && (
+            <motion.div 
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="absolute inset-0 bg-gray-50/90 backdrop-blur-sm z-10 flex flex-col items-center justify-center p-8 text-center"
+            >
+              <div className="w-16 h-16 bg-[#25D366]/20 text-[#25D366] rounded-full flex items-center justify-center mb-4">
+                <Phone size={32} />
+              </div>
+              <h3 className="text-2xl font-bold text-pfe-dark mb-2">Message Sent!</h3>
+              <p className="text-gray-600">Your request has been forwarded to our WhatsApp. We will get back to you shortly.</p>
+            </motion.div>
+          )}
+
           <h3 className="text-2xl font-bold text-pfe-dark mb-8">Send us a message</h3>
-          <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+          <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="grid grid-cols-2 gap-6">
               <div>
                 <label className="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-2">First Name</label>
-                <input type="text" className="w-full bg-white border border-gray-200 rounded-xl px-5 py-3.5 text-sm focus:outline-none focus:border-pfe-light focus:ring-1 focus:ring-pfe-light transition-all" />
+                <input required type="text" name="firstName" value={formData.firstName} onChange={handleChange} className="w-full bg-white border border-gray-200 rounded-xl px-5 py-3.5 text-sm focus:outline-none focus:border-pfe-light focus:ring-1 focus:ring-pfe-light transition-all" />
               </div>
               <div>
                 <label className="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-2">Last Name</label>
-                <input type="text" className="w-full bg-white border border-gray-200 rounded-xl px-5 py-3.5 text-sm focus:outline-none focus:border-pfe-light focus:ring-1 focus:ring-pfe-light transition-all" />
+                <input required type="text" name="lastName" value={formData.lastName} onChange={handleChange} className="w-full bg-white border border-gray-200 rounded-xl px-5 py-3.5 text-sm focus:outline-none focus:border-pfe-light focus:ring-1 focus:ring-pfe-light transition-all" />
               </div>
             </div>
             <div>
               <label className="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-2">Email Address</label>
-              <input type="email" className="w-full bg-white border border-gray-200 rounded-xl px-5 py-3.5 text-sm focus:outline-none focus:border-pfe-light focus:ring-1 focus:ring-pfe-light transition-all" />
+              <input required type="email" name="email" value={formData.email} onChange={handleChange} className="w-full bg-white border border-gray-200 rounded-xl px-5 py-3.5 text-sm focus:outline-none focus:border-pfe-light focus:ring-1 focus:ring-pfe-light transition-all" />
             </div>
             <div>
               <label className="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-2">Message</label>
-              <textarea rows={5} className="w-full bg-white border border-gray-200 rounded-xl px-5 py-3.5 text-sm focus:outline-none focus:border-pfe-light focus:ring-1 focus:ring-pfe-light transition-all resize-none"></textarea>
+              <textarea required rows={5} name="message" value={formData.message} onChange={handleChange} className="w-full bg-white border border-gray-200 rounded-xl px-5 py-3.5 text-sm focus:outline-none focus:border-pfe-light focus:ring-1 focus:ring-pfe-light transition-all resize-none"></textarea>
             </div>
-            <button className="w-full bg-pfe-light text-white rounded-xl px-6 py-4 font-bold uppercase tracking-wider text-sm hover:bg-pfe-dark transition-colors shadow-lg shadow-blue-100 flex items-center justify-center gap-2 mt-4">
+            <button type="submit" className="w-full bg-pfe-light text-white rounded-xl px-6 py-4 font-bold uppercase tracking-wider text-sm hover:bg-pfe-dark transition-colors shadow-lg shadow-blue-100 flex items-center justify-center gap-2 mt-4">
               Submit Request <ArrowUpRight size={18} />
             </button>
           </form>
