@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import logoImg from '../assets/images/logo.png.jpeg';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -15,11 +16,11 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: 'About Us', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Products', href: '#products' },
-    { name: 'Why Us', href: '#why-us' },
-    { name: 'FAQ', href: '#faq' },
+    { name: 'About Us', href: '/#about' },
+    { name: 'Services', href: '/#services' },
+    { name: 'Products', href: '/#products' },
+    { name: 'Why Us', href: '/#why-us' },
+    { name: 'FAQ', href: '/#faq' },
   ];
 
   return (
@@ -31,17 +32,12 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-3 group">
-          {/* Logo wrapper with a white background for visibility on dark navbars if the logo is dark */}
-          <div className={`px-4 py-1.5 flex items-center gap-1.5 rounded-lg transition-colors ${isScrolled ? 'bg-transparent' : 'bg-white/95'} shadow-sm`}>
-            {/* SVG approximation of the PFE swoosh logo */}
-            <svg width="32" height="32" viewBox="0 0 100 100" fill="none" className="transition-transform group-hover:scale-105">
-              <path d="M20 90 Q 5 40 40 10 Q 50 5 40 30 Q 30 55 20 90 Z" fill="#1C1864" />
-              <path d="M40 80 Q 25 30 60 0 Q 70 -5 60 20 Q 50 45 40 80 Z" fill="#DA1C23" />
-              <path d="M60 70 Q 45 20 80 -10 Q 90 -15 80 10 Q 70 35 60 70 Z" fill="#000000" />
-            </svg>
-            <span className="font-serif font-bold text-3xl tracking-tighter text-[#1C151D] group-hover:scale-105 transition-transform" style={{ fontFamily: 'Georgia, serif' }}>
-              pfe
-            </span>
+          <div className={`px-2 py-1 flex items-center gap-1.5 rounded-lg transition-colors ${isScrolled ? 'bg-transparent' : 'bg-white/95'} shadow-sm`}>
+            <img 
+              src={logoImg} 
+              alt="PFE Logo" 
+              className="h-10 w-auto object-contain transition-transform group-hover:scale-105"
+            />
           </div>
         </a>
 
@@ -59,7 +55,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="#contact"
+            href="/#contact"
             className="flex items-center gap-2 bg-pfe-light text-white px-6 py-2.5 rounded-full hover:bg-pfe-dark transition-colors shadow-lg shadow-blue-100 font-semibold uppercase tracking-wider text-sm"
           >
             <Phone size={16} /> Contact Us
@@ -96,7 +92,7 @@ export default function Navbar() {
             ))}
             <div className="p-6">
               <a
-                href="#contact"
+                href="/#contact"
                 onClick={() => setMobileMenuOpen(false)}
                 className="flex items-center justify-center gap-2 w-full bg-pfe-light text-white px-5 py-3 rounded hover:bg-pfe-dark transition-colors font-medium"
               >

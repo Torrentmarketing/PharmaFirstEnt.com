@@ -1,5 +1,6 @@
 import { Truck, Package, ShieldCheck, TrendingUp, Activity, Boxes, Briefcase, Pill, ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 
 import pfeTruckImage from '../assets/images/pfe-warehouse-truck.png';
 
@@ -95,11 +96,27 @@ export function Services() {
 
 import injectionsImage from '../assets/images/regenerated_image_1777614215883.png';
 
-const productCategories = [
-  { name: 'Tablets', image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=800' },
-  { name: 'Capsules', image: 'https://images.unsplash.com/photo-1628771065518-0d82f1938462?auto=format&fit=crop&q=80&w=800' },
-  { name: 'Syrups', image: 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&q=80&w=800' },
-  { name: 'Injections', image: injectionsImage },
+export const productCategories = [
+  { 
+    name: 'Tablets', 
+    image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=800',
+    products: ['Methimor', 'Ibumor', 'Morid', 'Levo-M', 'Gasidon', 'Safkam', 'RINGACIP', 'TRIOMOR', 'Montemore']
+  },
+  { 
+    name: 'Capsules', 
+    image: 'https://images.unsplash.com/photo-1628771065518-0d82f1938462?auto=format&fit=crop&q=80&w=800',
+    products: ['CombiCap', 'HIDIN', 'Gabimor', 'MYRIVA']
+  },
+  { 
+    name: 'Syrups', 
+    image: 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&q=80&w=800',
+    products: ['Gem-Ton', 'Amphozole', 'SAFPEP']
+  },
+  { 
+    name: 'Injections', 
+    image: injectionsImage,
+    products: ['Feximor', 'XIMEMOR', 'Azydec']
+  },
 ];
 
 export function Products() {
@@ -110,10 +127,11 @@ export function Products() {
           <div className="max-w-2xl">
             <span className="text-xs font-bold uppercase tracking-widest text-pfe-light mb-2 block">Portfolio</span>
             <h2 className="text-3xl md:text-4xl font-bold text-pfe-dark">Product Categories</h2>
+            <p className="mt-4 text-gray-500">Discover our comprehensive range of high-quality pharmaceutical products, thoroughly vetted and securely distributed to healthcare providers.</p>
           </div>
-          <button className="bg-[#2DAAE1] text-white px-6 py-2.5 rounded-full hover:bg-pfe-dark transition-colors shadow-lg shadow-blue-100 text-sm font-semibold uppercase tracking-wider">
+          <Link to="/catalog" className="bg-[#2DAAE1] text-white px-6 py-2.5 rounded-full hover:bg-pfe-dark transition-colors shadow-lg shadow-blue-100 text-sm font-semibold uppercase tracking-wider inline-flex items-center justify-center">
             View Full Catalog
-          </button>
+          </Link>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -124,7 +142,7 @@ export function Products() {
               whileInView={{ scale: 1, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="group relative flex flex-col bg-white border border-gray-100 shadow-sm rounded-2xl overflow-hidden cursor-pointer hover:shadow-lg transition-all"
+              className="group relative flex flex-col bg-white border border-gray-100 shadow-sm rounded-2xl overflow-hidden hover:shadow-lg transition-all"
             >
               <div className="aspect-[4/3] overflow-hidden relative">
                 <img 
@@ -134,11 +152,22 @@ export function Products() {
                 />
               </div>
               
-              <div className="p-5 border-l-4 border-pfe-light flex items-center justify-between bg-white relative z-10">
-                <h3 className="text-pfe-dark text-lg font-bold">{cat.name}</h3>
-                <div className="w-8 h-8 rounded bg-blue-50 text-pfe-light flex items-center justify-center group-hover:bg-pfe-light group-hover:text-white transition-colors">
-                  <ArrowRight size={16} />
+              <div className="p-5 border-l-4 border-pfe-light flex flex-col bg-white relative z-10 flex-grow">
+                <div className="flex items-center justify-between mb-3 border-b border-gray-50 pb-2">
+                  <h3 className="text-pfe-dark text-xl font-bold">{cat.name}</h3>
+                  <Link to={cat.name === 'Tablets' ? "/tablets" : "/catalog"} className="w-8 h-8 rounded bg-blue-50 text-pfe-light flex items-center justify-center group-hover:bg-pfe-light group-hover:text-white transition-colors cursor-pointer">
+                    <ArrowRight size={16} />
+                  </Link>
                 </div>
+                
+                <ul className="grid grid-cols-2 gap-x-2 gap-y-1.5 mt-2">
+                  {cat.products.map((product, pIdx) => (
+                    <li key={pIdx} className="text-sm font-medium text-gray-600 flex items-center gap-1.5">
+                      <div className="w-1.5 h-1.5 rounded-full bg-pfe-light/60"></div>
+                      {product}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </motion.div>
           ))}
