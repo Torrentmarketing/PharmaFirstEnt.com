@@ -85,7 +85,7 @@ export default function Hero() {
               rel="noreferrer"
               className="bg-white/10 border border-white text-white font-bold py-3 px-8 rounded-md shadow-lg flex items-center justify-center gap-2 hover:bg-white/20 transition-colors uppercase tracking-widest text-xs"
             >
-              Download Catalogue <Download size={16} />
+              Download Product Catalogue <Download size={16} />
             </a>
           </motion.div>
 
