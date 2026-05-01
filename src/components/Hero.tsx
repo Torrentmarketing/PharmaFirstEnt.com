@@ -56,13 +56,21 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.8 }}
-            className="mt-10 flex flex-col sm:flex-row gap-4"
+            className="mt-10 flex flex-col sm:flex-row gap-4 flex-wrap"
           >
             <a 
               href="#products" 
               className="bg-white text-pfe-dark font-bold py-3 px-8 rounded-md shadow-lg flex items-center justify-center gap-2 hover:bg-gray-50 transition-colors uppercase tracking-widest text-xs"
             >
               Explore Products <ArrowRight size={16} />
+            </a>
+            <a 
+              href="https://wa.me/923338111992?text=Hello%20PFE%2C%20i%20went%20through%20your%20website%20and%20I%20want%20to%20know%20more%20about%20your%20franchise%20system" 
+              target="_blank"
+              rel="noreferrer"
+              className="bg-[#25D366] text-white font-bold py-3 px-8 rounded-md shadow-lg flex items-center justify-center gap-2 hover:bg-[#128C7E] transition-colors uppercase tracking-widest text-xs"
+            >
+              WhatsApp Us
             </a>
             <a 
               href="#about" 

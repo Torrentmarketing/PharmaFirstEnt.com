@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { MessageSquareQuote, MapPin, Mail, Phone, ArrowUpRight, Plus, Minus } from 'lucide-react';
+import { MessageSquareQuote, MapPin, Mail, Phone, ArrowUpRight, Plus, Minus, Facebook, Instagram } from 'lucide-react';
 import { useState } from 'react';
 
 const testimonials = [
@@ -110,7 +110,7 @@ export function Contact() {
           
           <div className="flex flex-col gap-6 mt-auto">
             <a 
-              href="https://wa.me/923001234567" 
+              href="https://wa.me/923338111992" 
               target="_blank" 
               rel="noreferrer"
               className="flex items-center gap-4 p-5 bg-[#25D366]/10 text-[#075E54] rounded-xl border border-[#25D366]/30 hover:bg-[#25D366]/20 transition-colors"
@@ -118,7 +118,7 @@ export function Contact() {
               <Phone size={28} className="shrink-0" />
               <div className="text-base">
                 <div className="font-bold uppercase tracking-wider text-[11px] mb-1">Contact on WhatsApp</div>
-                <div className="font-bold">+92 300 1234 567</div>
+                <div className="font-bold">+92 333 8111992</div>
               </div>
             </a>
 
@@ -175,6 +175,16 @@ export function Footer() {
   return (
     <footer className="py-8 bg-gray-50 border-t border-gray-200 px-6 flex flex-col md:flex-row items-center justify-between text-[11px] uppercase tracking-widest text-gray-400 font-bold shrink-0">
       <div className="mb-4 md:mb-0">&copy; {new Date().getFullYear()} PharmaFirstEnterprises. All Rights Reserved.</div>
+      
+      <div className="flex items-center gap-4 mb-4 md:mb-0">
+        <a href="https://www.facebook.com/profile.php?id=61583585574792" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-[#1877F2] transition-colors">
+          <Facebook size={20} />
+        </a>
+        <a href="https://www.instagram.com/ente.rprises65/" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-[#E4405F] transition-colors">
+          <Instagram size={20} />
+        </a>
+      </div>
+
       <div className="flex gap-6">
         <a href="#" className="hover:text-pfe-light transition-colors">Privacy Policy</a>
         <a href="#" className="hover:text-pfe-light transition-colors">Certifications</a>
