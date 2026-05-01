@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Download } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -77,6 +77,15 @@ export default function Hero() {
               className="border border-white/30 hover:bg-white/10 text-white font-bold py-3 px-8 rounded-md backdrop-blur-sm flex items-center justify-center transition-colors uppercase tracking-widest text-xs"
             >
               Our Story
+            </a>
+            <a 
+              href="/PFE PRODUCT CATALOGUE.pdf.pdf" 
+              download="PFE_PRODUCT_CATALOGUE.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="bg-white/10 border border-white text-white font-bold py-3 px-8 rounded-md shadow-lg flex items-center justify-center gap-2 hover:bg-white/20 transition-colors uppercase tracking-widest text-xs"
+            >
+              Download Catalogue <Download size={16} />
             </a>
           </motion.div>
 
