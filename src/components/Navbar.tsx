@@ -31,12 +31,18 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-3 group">
-          <div className={`w-10 h-10 rounded-lg shrink-0 bg-pfe-dark flex items-center justify-center transition-colors overflow-hidden group-hover:bg-pfe-light`}>
-            <span className="text-white font-bold text-xl">PFE</span>
+          {/* Logo wrapper with a white background for visibility on dark navbars if the logo is dark */}
+          <div className={`px-4 py-1.5 flex items-center gap-1.5 rounded-lg transition-colors ${isScrolled ? 'bg-transparent' : 'bg-white/95'} shadow-sm`}>
+            {/* SVG approximation of the PFE swoosh logo */}
+            <svg width="32" height="32" viewBox="0 0 100 100" fill="none" className="transition-transform group-hover:scale-105">
+              <path d="M20 90 Q 5 40 40 10 Q 50 5 40 30 Q 30 55 20 90 Z" fill="#1C1864" />
+              <path d="M40 80 Q 25 30 60 0 Q 70 -5 60 20 Q 50 45 40 80 Z" fill="#DA1C23" />
+              <path d="M60 70 Q 45 20 80 -10 Q 90 -15 80 10 Q 70 35 60 70 Z" fill="#000000" />
+            </svg>
+            <span className="font-serif font-bold text-3xl tracking-tighter text-[#1C151D] group-hover:scale-105 transition-transform" style={{ fontFamily: 'Georgia, serif' }}>
+              pfe
+            </span>
           </div>
-          <span className={`font-bold text-xl tracking-tight transition-colors ${isScrolled ? 'text-pfe-dark' : 'text-white'}`}>
-            PharmaFirst<span className="font-normal text-pfe-light">Enterprises</span>
-          </span>
         </a>
 
         {/* Desktop Nav */}

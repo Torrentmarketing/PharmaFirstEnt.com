@@ -23,9 +23,9 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-white mb-6 text-left leading-[1.1] drop-shadow-md"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold !text-pfe-light mb-6 text-left leading-[1.1] drop-shadow-md"
           >
-            Reliable Medicine <br className="hidden md:block"/>Distribution Across <br className="hidden md:block"/><span className="text-pfe-light">Pakistan</span>
+            Reliable Medicine <br className="hidden md:block"/>Distribution Across <br className="hidden md:block"/><span className="!text-white">Pakistan</span>
           </motion.h1>
 
           <div className="relative pt-6 flex flex-col items-start gap-6">

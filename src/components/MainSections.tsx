@@ -1,6 +1,8 @@
 import { Truck, Package, ShieldCheck, TrendingUp, Activity, Boxes, Briefcase, Pill, ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
 
+import pfeTruckImage from '../assets/images/pfe-warehouse-truck.png';
+
 export function About() {
   return (
     <section id="about" className="pt-32 pb-24 md:pt-40 md:pb-32 bg-white px-6">
@@ -8,8 +10,8 @@ export function About() {
         <div className="flex-1 w-full relative">
           <div className="aspect-[4/3] rounded-2xl overflow-hidden text-center bg-slate-100 relative shadow-md">
              <img 
-               src="https://images.unsplash.com/photo-1579154204601-01588f351e71?auto=format&fit=crop&q=80&w=1200" 
-               alt="Modern Pharmaceutical Supply Chain" 
+               src={pfeTruckImage} 
+               alt="PFE Warehouse Truck and Supply Chain" 
                className="w-full h-full object-cover"
              />
              <div className="absolute -bottom-6 -right-6 lg:-bottom-10 lg:-right-10 bg-white p-6 shadow-xl rounded-2xl border border-gray-100 text-pfe-dark hidden md:block">
@@ -91,11 +93,13 @@ export function Services() {
   );
 }
 
+import injectionsImage from '../assets/images/regenerated_image_1777614215883.png';
+
 const productCategories = [
   { name: 'Tablets', image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=800' },
   { name: 'Capsules', image: 'https://images.unsplash.com/photo-1628771065518-0d82f1938462?auto=format&fit=crop&q=80&w=800' },
   { name: 'Syrups', image: 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&q=80&w=800' },
-  { name: 'Injections', image: 'https://images.unsplash.com/photo-1617952986518-80e227092147?auto=format&fit=crop&q=80&w=800' },
+  { name: 'Injections', image: injectionsImage },
 ];
 
 export function Products() {
