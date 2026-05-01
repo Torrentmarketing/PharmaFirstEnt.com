@@ -106,19 +106,36 @@ export function Contact() {
     message: ''
   });
   const [isSent, setIsSent] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
     
-    const whatsappNumber = "923338111992";
-    const text = `New Contact Request:%0A%0A*Name:* ${formData.firstName} ${formData.lastName}%0A*Email:* ${formData.email}%0A*Message:* ${formData.message}`;
-    
-    window.open(`https://wa.me/${whatsappNumber}?text=${text}`, "_blank");
-    
-    setIsSent(true);
-    setFormData({ firstName: '', lastName: '', email: '', message: '' });
-    
-    setTimeout(() => setIsSent(false), 5000);
+    try {
+      await fetch("https://formsubmit.co/ajax/PharmaFirstEnterprises@gmail.com", {
+        method: "POST",
+        headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+            Name: `${formData.firstName} ${formData.lastName}`,
+            Email: formData.email,
+            Message: formData.message,
+            _subject: "New Contact Request from PFE Website!"
+        })
+      });
+
+      setIsSent(true);
+      setFormData({ firstName: '', lastName: '', email: '', message: '' });
+      setTimeout(() => setIsSent(false), 5000);
+    } catch (error) {
+      console.error("Error sending message:", error);
+      alert("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -177,7 +194,7 @@ export function Contact() {
                 <Phone size={32} />
               </div>
               <h3 className="text-2xl font-bold text-pfe-dark mb-2">Message Sent!</h3>
-              <p className="text-gray-600">Your request has been forwarded to our WhatsApp. We will get back to you shortly.</p>
+              <p className="text-gray-600">Your request has been forwarded to our team. We will get back to you shortly.</p>
             </motion.div>
           )}
 
@@ -201,8 +218,8 @@ export function Contact() {
               <label className="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-2">Message</label>
               <textarea required rows={5} name="message" value={formData.message} onChange={handleChange} className="w-full bg-white border border-gray-200 rounded-xl px-5 py-3.5 text-sm focus:outline-none focus:border-pfe-light focus:ring-1 focus:ring-pfe-light transition-all resize-none"></textarea>
             </div>
-            <button type="submit" className="w-full bg-pfe-light text-white rounded-xl px-6 py-4 font-bold uppercase tracking-wider text-sm hover:bg-pfe-dark transition-colors shadow-lg shadow-blue-100 flex items-center justify-center gap-2 mt-4">
-              Submit Request <ArrowUpRight size={18} />
+            <button disabled={isSubmitting} type="submit" className="w-full bg-pfe-light text-white rounded-xl px-6 py-4 font-bold uppercase tracking-wider text-sm hover:bg-pfe-dark transition-colors shadow-lg shadow-blue-100 flex items-center justify-center gap-2 mt-4 disabled:opacity-70">
+              {isSubmitting ? 'Sending...' : 'Submit Request'} {!isSubmitting && <ArrowUpRight size={18} />}
             </button>
           </form>
         </div>
