@@ -99,23 +99,60 @@ import injectionsImage from '../assets/images/regenerated_image_1777614215883.pn
 export const productCategories = [
   { 
     name: 'Tablets', 
-    image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=800',
-    products: ['Methimor', 'Ibumor', 'Morid', 'Levo-M', 'Gasidon', 'Safkam', 'RINGACIP', 'TRIOMOR', 'Montemore']
+    image: '/Products/METHIMOR 500 MG TABLETS.jpeg',
+    products: [
+      { name: 'AZYDEC 500 MG', image: '/Products/AZYDEC 500 MG TABLETS.jpeg' },
+      { name: 'FEXIMOR 120 MG', image: '/Products/FEXIMOR 120 MG TABLETS.jpeg' },
+      { name: 'LEVO-M 250 MG', image: '/Products/LEVO-M 250 MG TABLETS.jpeg' },
+      { name: 'LEVO-M 500 MG', image: '/Products/LEVO-M 500 MG TABLETS.jpeg' },
+      { name: 'METHIMOR 500 MG', image: '/Products/METHIMOR 500 MG TABLETS.jpeg' },
+      { name: 'MONTEMORE 10 MG', image: '/Products/MONTEMORE 10 MG TABLETS.jpeg' },
+      { name: 'MORID 50 MG', image: '/Products/MORID 50 MG TABLETS.jpeg' },
+      { name: 'MYRIVA 400 MG', image: '/Products/MYRIVA 400 MG TABLETS.jpeg' },
+      { name: 'SAFKAM 20 MG', image: '/Products/SAFKAM 20 MG TABLETS.jpeg' }
+    ]
   },
   { 
     name: 'Capsules', 
-    image: 'https://images.unsplash.com/photo-1628771065518-0d82f1938462?auto=format&fit=crop&q=80&w=800',
-    products: ['CombiCap', 'HIDIN', 'Gabimor', 'MYRIVA']
+    image: '/Products/COMBICAP CAPSULES.jpeg',
+    products: [
+      { name: 'AMPHOZOLE 150 MG', image: '/Products/AMPHOZOLE 150 MG CAPSULES.jpeg' },
+      { name: 'AZYDEC 250 MG', image: '/Products/AZYDEC 250 MG CAPSULES.jpeg' },
+      { name: 'COMBICAP', image: '/Products/COMBICAP CAPSULES.jpeg' },
+      { name: 'GABIMOR 100 MG', image: '/Products/GABIMOR 100 MG CAPSULES.jpeg' },
+      { name: 'GABIMOR 75 MG', image: '/Products/GABIMOR 75MG CAPSULES.jpeg' },
+      { name: 'GEM-TON 20 MG', image: '/Products/GEM-TON 20MG CAPSULES.jpeg' },
+      { name: 'GEM-TON', image: '/Products/GEM-TON CAPSULES.jpeg' },
+      { name: 'HIDIN 250 MG', image: '/Products/HIDIN 250MG CAPSULES.jpeg' },
+      { name: 'HIDIN 500 MG', image: '/Products/HIDIN 500MG CAPSULES.jpeg' },
+      { name: 'RINGACIP 500 MG', image: '/Products/RINGACIP 500 MG CAPSULES.jpeg' },
+      { name: 'SAFPEP 20 MG', image: '/Products/SAFPEP 20 MG CAPSULES.jpeg' },
+      { name: 'SAFPEP', image: '/Products/SAFPEP CAPSULES.jpeg' },
+      { name: 'XIMEMOR 400 MG', image: '/Products/XIMEMOR 400 GM CAPSULES.jpeg' }
+    ]
   },
   { 
     name: 'Syrups', 
-    image: 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&q=80&w=800',
-    products: ['Gem-Ton', 'Amphozole', 'SAFPEP']
+    image: '/Products/Combicap syrup.jpeg',
+    products: [
+      { name: 'AZYDEC 200 MG', image: '/Products/AZYDEC 200MG SYRUPS.jpeg' },
+      { name: 'COMBICAP', image: '/Products/Combicap syrup.jpeg' },
+      { name: 'GASIDON', image: '/Products/GASIDON SYRUP.jpeg' },
+      { name: 'HIDIN 250 MG', image: '/Products/HIDIN 250MG SYRUP.jpeg' },
+      { name: 'HIDIN', image: '/Products/HIDIN SYRUP.jpeg' },
+      { name: 'IBUMOR 100 MG', image: '/Products/IBUMOR 100 MG SYRUP.jpeg' },
+      { name: 'RINGACIP 125 MG', image: '/Products/RINGACIP 125 MG SYRUP.jpeg' },
+      { name: 'RINGACIP 250 MG', image: '/Products/RINGACIP 250 MG SYRUP.jpeg' },
+      { name: 'XIMEMOR 100 MG', image: '/Products/XIMEMOR 100MG SYRUPS.jpeg' }
+    ]
   },
   { 
     name: 'Injections', 
-    image: injectionsImage,
-    products: ['Feximor', 'XIMEMOR', 'Azydec']
+    image: '/Products/TRIMOR 500MG INJECTIONS.jpeg',
+    products: [
+      { name: 'TRIMOR 1 GRAM', image: '/Products/TRIMOR 1 GRAM INJECTIONS.jpeg' },
+      { name: 'TRIMOR 500 MG', image: '/Products/TRIMOR 500MG INJECTIONS.jpeg' }
+    ]
   },
 ];
 
@@ -159,15 +196,6 @@ export function Products() {
                     <ArrowRight size={16} />
                   </Link>
                 </div>
-                
-                <ul className="grid grid-cols-2 gap-x-2 gap-y-1.5 mt-2">
-                  {cat.products.map((product, pIdx) => (
-                    <li key={pIdx} className="text-sm font-medium text-gray-600 flex items-center gap-1.5">
-                      <div className="w-1.5 h-1.5 rounded-full bg-pfe-light/60"></div>
-                      {product}
-                    </li>
-                  ))}
-                </ul>
               </div>
             </motion.div>
           ))}

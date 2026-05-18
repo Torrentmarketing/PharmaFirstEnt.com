@@ -3,15 +3,15 @@ import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const tabletImages = [
-  { src: '/images/MAKE_IT_BRIGHT_202604151133.jpeg', brand: 'Methimor' },
-  { src: '/images/Product_catalog_image_202604151121.jpeg', brand: 'Ibumor' },
-  { src: '/images/Product_catalog_image_202604151132.jpeg', brand: 'Morid' },
-  { src: '/images/Product_catalog_image_202604151133.jpeg', brand: 'Levo-M' },
-  { src: '/images/Use_the_provided_202604151121 (10).jpeg', brand: 'Gasidon' },
-  { src: '/images/Use_the_provided_202604151121 (2).jpeg', brand: 'Safkam' },
-  { src: '/images/Use_the_provided_202604151121 (3).jpeg', brand: 'RINGACIP' },
-  { src: '/images/Use_the_provided_202604151121 (4).jpeg', brand: 'TRIOMOR' },
-  { src: '/images/Use_the_provided_202604151121 (5).jpeg', brand: 'Montemore' },
+  { src: '/Products/METHIMOR 500 MG TABLETS.jpeg', brand: 'Methimor 500 MG' },
+  { src: '/Products/LEVO-M 250 MG TABLETS.jpeg', brand: 'Levo-M 250 MG' },
+  { src: '/Products/LEVO-M 500 MG TABLETS.jpeg', brand: 'Levo-M 500 MG' },
+  { src: '/Products/MORID 50 MG TABLETS.jpeg', brand: 'Morid 50 MG' },
+  { src: '/Products/SAFKAM 20 MG TABLETS.jpeg', brand: 'Safkam 20 MG' },
+  { src: '/Products/FEXIMOR 120 MG TABLETS.jpeg', brand: 'Feximor 120 MG' },
+  { src: '/Products/AZYDEC 500 MG TABLETS.jpeg', brand: 'Azydec 500 MG' },
+  { src: '/Products/MYRIVA 400 MG TABLETS.jpeg', brand: 'Myriva 400 MG' },
+  { src: '/Products/MONTEMORE 10 MG TABLETS.jpeg', brand: 'Montemore 10 MG' }
 ];
 
 export default function TabletsCatalogue() {

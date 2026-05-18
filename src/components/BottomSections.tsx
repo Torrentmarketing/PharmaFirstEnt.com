@@ -153,7 +153,7 @@ export function Contact() {
           
           <div className="flex flex-col gap-6 mt-auto">
             <a 
-              href="https://wa.me/923338111992" 
+              href="https://wa.me/923339112013" 
               target="_blank" 
               rel="noreferrer"
               className="flex items-center gap-4 p-5 bg-[#25D366]/10 text-[#075E54] rounded-xl border border-[#25D366]/30 hover:bg-[#25D366]/20 transition-colors"
@@ -161,7 +161,7 @@ export function Contact() {
               <Phone size={28} className="shrink-0" />
               <div className="text-base">
                 <div className="font-bold uppercase tracking-wider text-[11px] mb-1">Contact on WhatsApp</div>
-                <div className="font-bold">+92 333 8111992</div>
+                <div className="font-bold">+92 333 9112013</div>
               </div>
             </a>
 
@@ -169,7 +169,7 @@ export function Contact() {
               <MapPin size={24} className="text-pfe-dark shrink-0" />
               <div className="text-sm md:text-base text-gray-600">
                 <div className="font-bold text-pfe-dark mb-1">Headquarters</div>
-                123 Health Avenue, Business District<br/>Karachi, Pakistan
+                7-A Industrial Estate Rd, Phase-1 Phase 1 Hayatabad,<br/>Peshawar, 25000, Pakistan
               </div>
             </div>
 
@@ -177,7 +177,7 @@ export function Contact() {
               <Mail size={24} className="text-pfe-dark shrink-0" />
               <div className="text-sm md:text-base text-gray-600">
                 <div className="font-bold text-pfe-dark mb-1">Email</div>
-                info@pharmafirst.com.pk<br/>partners@pharmafirst.com.pk
+                PharmaFirstEnterprises@gmail.com
               </div>
             </div>
           </div>

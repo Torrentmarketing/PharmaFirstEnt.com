@@ -36,33 +36,7 @@ export default function Catalog() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {category.products.map((product, pIdx) => {
-                  // Creating a simple colorful placeholder image based on the product name so it looks nice
-                  const seed = product;
-                  const placeholderImg = `https://api.dicebear.com/9.x/shapes/svg?seed=${seed}&backgroundColor=f0f9ff`;
-                  
-                  const productImagesConfig: Record<string, string> = {
-                    'Methimor': '/images/MAKE_IT_BRIGHT_202604151133.jpeg',
-                    'Ibumor': '/images/Product_catalog_image_202604151121.jpeg',
-                    'Morid': '/images/Product_catalog_image_202604151132.jpeg',
-                    'Levo-M': '/images/Product_catalog_image_202604151133.jpeg',
-                    'Gasidon': '/images/Use_the_provided_202604151121 (10).jpeg',
-                    'Safkam': '/images/Use_the_provided_202604151121 (2).jpeg',
-                    'RINGACIP': '/images/Use_the_provided_202604151121 (3).jpeg',
-                    'TRIOMOR': '/images/Use_the_provided_202604151121 (4).jpeg',
-                    'Montemore': '/images/Use_the_provided_202604151121 (5).jpeg',
-                    'CombiCap': '/images/Use_the_provided_202604151121 (6).jpeg',
-                    'HIDIN': '/images/Use_the_provided_202604151121 (7).jpeg',
-                    'Gabimor': '/images/Use_the_provided_202604151121 (8).jpeg',
-                    'MYRIVA': '/images/Use_the_provided_202604151121 (9).jpeg',
-                    'Gem-Ton': '/images/Use_the_provided_202604151122 (1).jpeg',
-                    'Amphozole': '/images/Use_the_provided_202604151122 (2).jpeg',
-                    'SAFPEP': '/images/Use_the_provided_202604151122.jpeg',
-                    'Feximor': '/images/Use_the_provided_202604151132 (1).jpeg',
-                    'XIMEMOR': '/images/Use_the_provided_202604151132 (2).jpeg',
-                    'Azydec': '/images/Use_the_provided_202604151132 (3).jpeg',
-                  };
-
-                  const productImage = productImagesConfig[product] || placeholderImg;
+                  const productImage = product.image;
 
                   return (
                     <motion.div 
@@ -71,20 +45,18 @@ export default function Catalog() {
                       className="group flex flex-col bg-slate-50 rounded-xl overflow-hidden border border-gray-100 hover:border-blue-200 transition-all hover:shadow-md cursor-pointer"
                     >
                       <div className="aspect-[4/3] bg-white relative overflow-hidden flex items-center justify-center p-6">
-                         {/* Fallback pattern if images are not uploaded, using dicebear abstraction or could use unsplash source. Since they're medical, let's use a nice geometric shape or unsplash query */}
                          <img 
                            src={productImage} 
-                           alt={product}
+                           alt={product.name}
                            className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
                            onError={(e) => {
-                             if (e.currentTarget.src !== placeholderImg) {
-                               e.currentTarget.src = placeholderImg;
-                             }
+                             // Fallback if image fails to load
+                             e.currentTarget.src = `https://api.dicebear.com/9.x/shapes/svg?seed=${product.name}&backgroundColor=f0f9ff`;
                            }}
                          />
                       </div>
                       <div className="p-4 border-t border-gray-100 bg-white flex-grow">
-                        <h3 className="font-bold text-pfe-dark text-lg mb-1">{product}</h3>
+                        <h3 className="font-bold text-pfe-dark text-lg mb-1">{product.name}</h3>
                         <div className="flex gap-2 items-center mt-2">
                            <span className="text-[10px] font-bold uppercase tracking-wider text-pfe-light bg-blue-50 px-2 py-1 rounded">
                              {category.name}
